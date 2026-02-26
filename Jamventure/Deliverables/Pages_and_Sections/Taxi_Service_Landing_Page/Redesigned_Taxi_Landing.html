@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JamVenture - Private Taxi Service in Jamaica</title>
+
+    <!-- TAILWIND & FONTS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-green": "#16a34a",
+                        "hover-green": "#15803d",
+                        "accent-yellow": "#facc15",
+                        "accent-gold": "#ca8a04",
+                        "dark-slate": "#0f172a",
+                        "light-slate": "#f8fafc",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- CUSTOM STYLES -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #0f172a;
+            /* Slate-900 */
+            background-color: #f8fafc;
+            /* Slate-50 */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-light-slate text-dark-slate antialiased">
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center bg-dark-slate overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://jamventure.tours/wp-content/uploads/2026/02/JamVenture-Private-Taxi-Service-–-Comfortable-Coastal-Transfers.png"
+                alt="Jamaica Private Taxi Service" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-slate/40 via-dark-slate/60 to-dark-slate"></div>
+        </div>
+
+        <div class="container relative z-10 mx-auto px-6 py-20 text-center">
+            <div class="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
+                <span
+                    class="inline-block px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase bg-primary-green/20 text-primary-green border border-primary-green/30 backdrop-blur-sm">
+                    Premium Island Transportation
+                </span>
+
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                    Your Private Link to <span class="text-primary-green">Jamaican Paradise</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed">
+                    Licensed, safe, and professional taxi services for airport, hotel, and tour transfers across the
+                    island.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
+                    <!-- Button 1: WhatsApp -->
+                    <a href="https://wa.me/message/X5F72DZZQTDPB1"
+                        class="inline-flex items-center justify-center whitespace-nowrap bg-green-600 hover:bg-green-700 text-white hover:text-yellow-400 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.4)] font-bold tracking-wide h-16 rounded-xl px-10 text-lg gap-3 w-full sm:w-auto group">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
+                        Book via WhatsApp
+                    </a>
+
+                    <!-- Button 2: AI Assistant -->
+                    <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                        class="inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] font-bold tracking-wide h-16 rounded-xl px-10 text-lg gap-3 w-full sm:w-auto">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                        Speak to AI Guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR / LOCATIONS -->
+    <section class="py-10 bg-white border-b border-slate-100 italic">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 opacity-60">
+                <p class="text-sm font-bold uppercase tracking-widest text-slate-400 whitespace-nowrap">Service
+                    Coverage:</p>
+                <div class="flex flex-wrap justify-center gap-6 text-slate-600 font-semibold text-sm">
+                    <span>Montego Bay (MBJ)</span>
+                    <span>Kingston (KIN)</span>
+                    <span>Ocho Rios</span>
+                    <span>Negril</span>
+                    <span>Falmouth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="py-24 bg-light-slate">
+        <div class="container mx-auto px-6">
+            <div class="max-w-[800px] mx-auto text-center space-y-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full text-sm font-bold bg-green-100 text-green-700 border border-green-200">
+                    Local Expertise
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-dark-slate">
+                    Why Travel with JamVenture?
+                </h2>
+                <div class="w-20 h-1.5 bg-primary-green mx-auto rounded-full"></div>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Skip the stress of navigating unfamiliar roads or haggling with unverified drivers. Our JTB-licensed
+                    team provides a seamless, safe, and air-conditioned environment from the moment you land until your
+                    final drop-off. We don't just drive; we guide you through the heart of Jamaica.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 bg-green-100 text-green-700 border border-green-200">
+                    Our Services
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+                    Reliable Transport for Every Need
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    From airport transfers to personalized island tours, we’ve got you covered.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Airport Transfers -->
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-light-slate rounded-xl border border-slate-200 hover:border-primary-green/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-primary-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">flight_land</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-slate mb-3">Airport Transfers</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">VIP pickup from MBJ and KIN. We monitor
+                            your flight for real-time adjustments.</p>
+                        <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                            class="inline-flex items-center text-primary-green font-bold hover:text-hover-green transition-colors text-sm">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cruise Port -->
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-light-slate rounded-xl border border-slate-200 hover:border-primary-green/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-primary-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">directions_boat</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-slate mb-3">Cruise Service</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Prompt shuttles from Falmouth and Ocho
+                            Rios ports to top local attractions.</p>
+                        <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                            class="inline-flex items-center text-primary-green font-bold hover:text-hover-green transition-colors text-sm">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hotel Transfers -->
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-light-slate rounded-xl border border-slate-200 hover:border-primary-green/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-primary-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">hotel</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-slate mb-3">Hotel & Airbnbs</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Direct, private door-to-door service to
+                            any resort or private villa on the island.</p>
+                        <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                            class="inline-flex items-center text-primary-green font-bold hover:text-hover-green transition-colors text-sm">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Point to Point -->
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-light-slate rounded-xl border border-slate-200 hover:border-primary-green/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-primary-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">location_on</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-slate mb-3">Point-to-Point</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">Dinner runs, shopping trips, or beach
+                            days. We're your on-call transport partner.</p>
+                        <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                            class="inline-flex items-center text-primary-green font-bold hover:text-hover-green transition-colors text-sm">
+                            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT SECTION (Why Choose Us) -->
+    <section class="py-24 bg-light-slate overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image Side -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-green opacity-10 rounded-full"></div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-accent-gold opacity-10 rounded-full"></div>
+                    <div
+                        class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://jamventure.tours/wp-content/uploads/2026/02/JamVenture-Licensed-Professional-Private-Taxi-Services-in-Jamaica.png"
+                            alt="Friendly Jamaica driver" class="w-full h-auto">
+                    </div>
+                    <!-- Review Floating Card -->
+                    <div
+                        class="absolute -bottom-10 left-10 z-20 bg-white p-6 rounded-xl shadow-xl border-l-4 border-primary-green max-w-xs animate-fade-in-up">
+                        <div class="flex gap-1 text-accent-yellow mb-2">
+                            <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                            <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                            <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                            <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                            <span class="material-symbols-outlined fill-current text-[18px]">star</span>
+                        </div>
+                        <p class="text-sm italic font-medium text-slate-700">"Safe, reliable, and amazing hospitality.
+                            The highlight transport of our trip!"</p>
+                        <p class="text-xs mt-3 font-bold text-primary-green uppercase">— Jessica R.</p>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="w-full lg:w-1/2 space-y-10">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">The JamVenture Difference</h2>
+                        <p class="text-lg text-slate-600">We set the gold standard for transportation in Jamaica.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex gap-4 items-start pb-6 border-b border-slate-200">
+                            <div class="text-primary-green mt-1">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">JTB Licensed</h4>
+                                <p class="text-xs text-slate-500">Fully insured and certified by the Tourist Board.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start pb-6 border-b border-slate-200">
+                            <div class="text-primary-green mt-1">
+                                <span class="material-symbols-outlined">price_check</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Fixed Pricing</h4>
+                                <p class="text-xs text-slate-500">No hidden fees or unexpected surge charges.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start pb-6 border-b border-slate-200">
+                            <div class="text-primary-green mt-1">
+                                <span class="material-symbols-outlined">ac_unit</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Cool & Clean</h4>
+                                <p class="text-xs text-slate-500">Late-model vehicles with powerful A/C.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start pb-6 border-b border-slate-200">
+                            <div class="text-primary-green mt-1">
+                                <span class="material-symbols-outlined">support_agent</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">24/7 Priority</h4>
+                                <p class="text-xs text-slate-500">We track your needs around the clock.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOURS CTA SECTION -->
+    <section class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <span
+                class="inline-block px-4 py-1.5 rounded-full text-[10px] font-extrabold tracking-widest uppercase bg-dark-slate text-white mb-6">Explore
+                the Island</span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Beyond the Airport Hub</h2>
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                Want to see the real Jamaica? We offer private tour packages to Dunn’s River Falls, Negril Seven Mile
+                Beach, and the Blue Hole. Customize your journey with us.
+            </p>
+            <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                class="inline-flex items-center text-primary-green font-bold text-lg hover:text-hover-green gap-2 group">
+                Discover Tour Packages
+                <span
+                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="relative py-24 bg-slate-50 overflow-hidden border-t border-slate-100">
+        <!-- Abstract Circles -->
+        <div
+            class="absolute top-0 left-0 w-64 h-64 bg-green-100 opacity-50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-yellow-100 opacity-50 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl">
+        </div>
+
+        <div class="container relative z-10 mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
+                Ready to Experience <br class="hidden md:block"> Jamaica Like a Local?
+            </h2>
+            <p class="text-xl text-slate-600 mb-12 max-w-2xl mx-auto font-medium">
+                Secure your private transfer now and start your vacation with peace of mind. Fast, friendly, and 100%
+                reliable.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <!-- Button 1: WhatsApp -->
+                <a href="https://wa.me/message/X5F72DZZQTDPB1"
+                    class="inline-flex items-center justify-center whitespace-nowrap bg-green-600 hover:bg-green-700 text-white hover:text-yellow-400 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.4)] font-bold tracking-wide h-16 rounded-xl px-10 text-lg gap-3 w-full sm:w-auto group">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    WhatsApp Booking
+                </a>
+
+                <!-- Button 2: AI Assistant -->
+                <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                    class="inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(79,70,229,0.4)] font-bold tracking-wide h-16 rounded-xl px-10 text-lg gap-3 w-full sm:w-auto">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                    </svg>
+                    Speak to AI Guide
+                </a>
+            </div>
+
+            <p class="mt-8 text-slate-500 text-sm font-semibold flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">lock</span>
+                Secure 24/7 Reservation System
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel-to-Hotel Transfers in Jamaica | JamVenture</title>
+    <meta name="description"
+        content="Private hotel-to-hotel transfers in Jamaica. Fixed pricing, direct travel, and professional local drivers serving resorts, villas, and Airbnbs island-wide.">
+
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#16a34a', // green-600
+                            dark: '#0f172a', // slate-900
+                            light: '#f8fafc', // slate-50
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        /* Glass Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        /* Modal Utility */
+        .hidden-modal {
+            display: none !important;
+        }
+
+        /* Custom Hover Transitions */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-slate-900 tracking-tight">
+                        Jam<span class="text-green-600">Venture</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu (Placeholder for full site nav) -->
+                <div class="hidden md:flex space-x-8">
+                    <!-- Links would go here -->
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-900 hover:text-green-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-900 hover:text-green-600 hover:bg-slate-50">Home</a>
+                <!-- Add more links as needed -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-4 flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Updated Image: Tourists traveling/arriving in tropical setting -->
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop"
+                alt="Tourists traveling in Jamaica" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/50"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-green-500/20 border border-green-400/30 text-green-300 text-sm font-semibold mb-4 animate-fade-in-up">
+                Private Transfer Services
+            </span>
+            <h1 class="text-3xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight animate-fade-in-up delay-100">
+                Hotel-to-Hotel Transfers in Jamaica
+            </h1>
+            <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                Private, door-to-door transfers between hotels, resorts, villas, and Airbnbs across Jamaica.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200 mb-0">
+                <!-- [ACTION REQUIRED] Link to Booking Page/Modal -->
+                <a href="#"
+                    class="inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-bold rounded-xl text-white bg-green-600 hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30">
+                    Book Hotel Transfer
+                </a>
+                <!-- [ACTION REQUIRED] Link to Quote Request -->
+                <a href="#"
+                    class="inline-flex justify-center items-center px-8 py-3.5 border border-white/30 text-base font-bold rounded-xl text-white hover:bg-white/10 backdrop-blur-sm transition-all">
+                    Get Instant Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Moving between accommodations should be simple.</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                JamVenture provides private hotel-to-hotel transfers so you can travel comfortably, on your schedule,
+                without shared shuttles or ride-share uncertainty.
+            </p>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-4">
+                    Service Features
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What to Expect</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fixed Pricing</h3>
+                    <p class="text-slate-600">Your rate is confirmed at booking — no hidden fees or surprises.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Private, Direct Travel</h3>
+                    <p class="text-slate-600">No shared vehicles. No extra stops. Just you and your group.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Door-to-Door Service</h3>
+                    <p class="text-slate-600">Pickup and drop-off directly at your accommodation.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover-lift border border-slate-100">
+                    <div
+                        class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Comfortable Vehicles</h3>
+                    <p class="text-slate-600">Clean, air-conditioned vehicles with professional local drivers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-4">
+                    Destinations
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Popular Routes</h2>
+                <p class="mt-4 text-slate-600">Island-wide transfers available.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <div class="w-2 h-2 rounded-full bg-green-500 mr-4"></div>
+                    <span class="text-lg font-medium text-slate-800">Montego Bay ⇄ Negril</span>
+                </div>
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <div class="w-2 h-2 rounded-full bg-green-500 mr-4"></div>
+                    <span class="text-lg font-medium text-slate-800">Montego Bay ⇄ Ocho Rios</span>
+                </div>
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <div class="w-2 h-2 rounded-full bg-green-500 mr-4"></div>
+                    <span class="text-lg font-medium text-slate-800">Montego Bay ⇄ Falmouth</span>
+                </div>
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <div class="w-2 h-2 rounded-full bg-green-500 mr-4"></div>
+                    <span class="text-lg font-medium text-slate-800">Kingston ⇄ North Coast resorts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why JamVenture Section -->
+    <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Decorative background circle -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-green-600 rounded-full opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-600 rounded-full opacity-10 blur-3xl">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Why JamVenture</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="p-4 bg-slate-800 rounded-full mb-4 text-green-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Private, reliable transfers</h3>
+                    <p class="text-slate-400 text-sm">Always on your schedule.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="p-4 bg-slate-800 rounded-full mb-4 text-green-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Licensed & insured drivers</h3>
+                    <p class="text-slate-400 text-sm">Professional and safe.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="p-4 bg-slate-800 rounded-full mb-4 text-green-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Fixed, transparent rates</h3>
+                    <p class="text-slate-400 text-sm">Know the cost upfront.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="p-4 bg-slate-800 rounded-full mb-4 text-green-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">On-time, professional service</h3>
+                    <p class="text-slate-400 text-sm">We value your time.</p>
+                </div>
+            </div>
+
+            <p class="mt-12 text-slate-300 font-medium">Smooth travel between stays.</p>
+        </div>
+    </section>
+
+    <!-- QA/CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-green-50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-900">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Book Your Hotel-to-Hotel Transfer</h2>
+            <p class="text-xl text-slate-600 mb-10">Travel comfortably between destinations.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- [ACTION REQUIRED] Link to Reservation Page -->
+                <a href="#"
+                    class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-green-600 hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-1">
+                    Reserve Hotel Transfer
+                </a>
+
+                <!-- [ACTION REQUIRED] Link to AI Assistant/Chat -->
+                <a href="#"
+                    class="inline-flex justify-center items-center px-8 py-4 border-2 border-slate-200 text-lg font-bold rounded-xl text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all transform hover:-translate-y-1">
+                    <span class="mr-2">✨</span> Ask Our AI Island Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Removed as per request -->
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

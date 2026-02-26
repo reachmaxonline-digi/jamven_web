@@ -1,0 +1,1042 @@
+<!-- JAMVENTURE TOURS SECTION - BRAND ALIGNED (MASTER DESIGN SYSTEM) -->
+
+<!-- 1. Dependencies (Tailwind & Montserrat Font) -->
+<!-- Copy this into your document head if not already present -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<style>
+    /* WRAPPER ID to prevent theme conflicts */
+    #jv-tours-wrapper {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.5;
+        color: #0f172a;
+        /* Slate-900 */
+        background-color: #f8fafc;
+        /* Slate-50 Background */
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* RESET Elementor defaults for this section */
+    #jv-tours-wrapper button,
+    #jv-tours-wrapper a {
+        text-decoration: none !important;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* SMOOTH SCROLLING */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* CARD HOVER EFFECTS - MATCHING DESIGN BLUEPRINT */
+    #jv-tours-wrapper .tour-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid #e2e8f0;
+        /* Slate-200 */
+    }
+
+    #jv-tours-wrapper .tour-card:hover {
+        transform: translateY(-4px);
+        /* Hover Lift: -translate-y-1 equivalent */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        /* shadow-xl */
+        border-color: rgba(22, 163, 74, 0.3);
+        /* green-500/30 */
+    }
+
+    #jv-tours-wrapper .tour-card:hover .card-img {
+        transform: scale(1.1);
+    }
+
+    /* BUTTON STYLES - PRIMARY GREEN (MASTER DESIGN SYSTEM) */
+    #jv-tours-wrapper .jv-book-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #16a34a !important;
+        /* bg-green-600 */
+        color: #ffffff !important;
+        border-radius: 0.75rem !important;
+        /* rounded-xl */
+        transition: all 0.3s ease !important;
+    }
+
+    #jv-tours-wrapper .jv-book-btn:hover {
+        background-color: #15803d !important;
+        /* bg-green-700 / Brand Hover Green */
+        transform: translateY(-2px) scale(1.05);
+        /* hover:scale-105 */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        /* shadow-lg */
+    }
+
+    /* TAB STYLES */
+    #jv-tours-wrapper .filter-btn {
+        transition: all 0.3s ease;
+    }
+
+    /* Active Tab - Dark Slate (Design System Accent) */
+    #jv-tours-wrapper .tab-active {
+        background-color: #0f172a !important;
+        /* Dark Slate */
+        color: white !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Inactive Tab */
+    #jv-tours-wrapper .tab-inactive {
+        background-color: #ffffff !important;
+        color: #64748b !important;
+        /* Slate-500 */
+        border: 1px solid #e2e8f0;
+    }
+
+    #jv-tours-wrapper .tab-inactive:hover {
+        background-color: #f1f5f9 !important;
+        /* Slate-100 */
+        color: #16a34a !important;
+        /* Hover text Green */
+        border-color: #16a34a;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+</style>
+
+<div id="jv-tours-wrapper">
+
+    <!-- HERO SECTION (Updated to Match Internal Page Template) -->
+    <section class="relative py-32 bg-slate-900 flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1552353617-3bfd679b3bdd?auto=format&fit=crop&q=80&w=2000"
+                class="w-full h-full object-cover opacity-60" alt="Jamaica Tours" />
+            <!-- Increased opacity slightly for vibe -->
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900"></div>
+            <!-- Master Design Gradient -->
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 max-w-4xl">
+            <span
+                class="inline-block text-green-400 font-bold tracking-widest uppercase text-sm mb-2 block animate-fade-in-up">
+                Curated Experiences
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+                Explore Jamaica in <span class="text-green-500">Absolute Luxury</span>
+            </h1>
+            <p class="text-lg text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed animate-fade-in-up">
+                From exclusive estate tours to hidden waterfalls. Book your private experience with JTB-certified
+                professionals.
+            </p>
+        </div>
+    </section>
+
+    <!-- NO TOURS FOUND MESSAGE (Hidden by default) -->
+    <div id="no-results" class="hidden py-20 text-center bg-slate-50">
+        <div class="max-w-md mx-auto px-6">
+            <div class="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🔍
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">No Tours Found</h3>
+            <p class="text-slate-600 mb-8">We couldn't find any tours in this category right now. Please check another
+                collection.</p>
+            <button onclick="filterTours('all', document.querySelector('.filter-btn'))"
+                class="text-green-600 font-bold hover:underline">View All Collection</button>
+        </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <section class="py-6 bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm bg-white/95 backdrop-blur-md">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterTours('all', this)"
+                    class="filter-btn tab-active px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wide">
+                    All
+                </button>
+                <button onclick="filterTours('family', this)"
+                    class="filter-btn tab-inactive px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wide">
+                    Family & Beach
+                </button>
+                <button onclick="filterTours('adventure', this)"
+                    class="filter-btn tab-inactive px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wide">
+                    Premium Adventure
+                </button>
+                <button onclick="filterTours('culture', this)"
+                    class="filter-btn tab-inactive px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wide">
+                    Culture & Nature
+                </button>
+                <button onclick="filterTours('special', this)"
+                    class="filter-btn tab-inactive px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wide">
+                    Special Interest
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOUR CARDS GRID -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <!-- SECTION HEADER COMPONENT -->
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 bg-green-100 text-green-700 border border-green-200">
+                    Our Collection
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+                    Unforgettable Island Experiences
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Hand-picked destinations for the discerning traveler.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="tours-grid">
+
+                <!-- === CATEGORY 1: FAMILY & BEACH === -->
+
+                <!-- === CATEGORY 1: FAMILY & BEACH === -->
+
+                <!-- Doctor's Cave Beach -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="family">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Doctors-Cave-Beach.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Doctor's Cave Beach">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Top Pick, Family Friendly
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Montego Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Doctor's Cave Beach</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            Known for its clear turquoise waters and white sand, it is ideal for swimming and sunning.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Doctor's%20Cave"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seven Mile Beach -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="family">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Seven-Mile-Beach.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Seven Mile Beach">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Must Do, Top Pick
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Negril
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Seven Mile Beach</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A famous stretch of white sand known for its lively atmosphere, local bars, and
+                            crystal-clear water.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Seven%20Mile"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dolphin Cove -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="family">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy" src="https://jamventure.tours/wp-content/uploads/2026/01/Dolphin-Cove.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Dolphin Cove">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Unique, Family Friendly
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Ocho Rios
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Dolphin Cove</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A marine park where visitors can swim with dolphins in their natural habitat.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Dolphin%20Cove"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YS Falls -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="family">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy" src="https://jamventure.tours/wp-content/uploads/2026/01/YS-Falls.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="YS Falls">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Nature, Family Friendly
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            South Coast
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">YS Falls</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A series of beautiful waterfalls lined with picnic areas for a relaxing afternoon.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20YS%20Falls"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY 2: PREMIUM ADVENTURE === -->
+
+                <!-- Triple Action Pack Combo -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="adventure">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Triple-Action-Pack-Combo.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Triple Action Pack">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Thrills, Adventure
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Ocho Rios
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Triple Action Pack Combo</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A high-rated tour combining the Blue Hole, horseback riding, and river tubing.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Triple%20Action%20Pack"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jamaica All-Access Adventure Pass -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="adventure">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/All-Access-Adventure-Pass.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="All-Access Pass">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Top Seller, Adventure
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Sandy Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">All-Access Adventure Pass</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            This pass allows guests to bundle activities like ziplining, ATV riding, and ocean
+                            trekking.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Adventure%20Pass"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blue Hole & Dunn's River Falls Tour -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="adventure">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Blue-Hole-Dunns-River.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Blue Hole & Dunn's River">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Must Do, Top Seller
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Ocho Rios
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Blue Hole & Dunn's River</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            Explore natural limestone pools and climbing world-famous waterfalls.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Blue%20Hole%20Dunn's"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ATV Jungle Safari -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="adventure">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/ATV-Jungle-Safari.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="ATV Jungle Safari">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Adventure, Thrills
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Montego Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">ATV Jungle Safari</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            An off-road journey through rugged jungle terrain with high traveler ratings.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20ATV%20Safari"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY 3: CULTURE & NATURE === -->
+
+                <!-- Rastafari Cultural ATV Experience -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="culture">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Rastafari-Cultural-ATV.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Rastafari ATV">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Authentic, Educational
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Montego Bay/Negril
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Rastafari Cultural ATV</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            An off-road tour through a local community where visitors learn about Rastafarian
+                            traditions and flora.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Rastafari%20ATV"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Martha Brae River Rafting -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="culture">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Martha-Brae-Rafting-1.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Martha Brae">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Nature, Unique
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Trelawny
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Martha Brae Rafting</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A peaceful experience gliding through the jungle on a handcrafted bamboo raft.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Martha%20Brae"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bob Marley Museum -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="culture">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Bob-Marley-Museum.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Bob Marley Museum">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            History, Must Do
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Kingston
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Bob Marley Museum</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            The legendary artist's former home, displaying artifacts and his iconic guitar.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Bob%20Marley%20Museum"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rose Hall Great House -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="culture">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Rose-Hall-Great-House.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Rose Hall Great House">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            History, Unique
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Montego Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Rose Hall Great House</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A historic 1770s mansion famous for its haunting tales and colonial architecture.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Rose%20Hall"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CATEGORY 4: SPECIAL INTEREST === -->
+
+                <!-- Club Mobay Sangster Airport VIP Lounge -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="special">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Club-Mobay-VIP-Lounge.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Club Mobay">
+                        <div
+                            class="absolute top-5 left-5 bg-yellow-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            VIP, Luxury, Top Seller
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Montego Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Club Mobay VIP Lounge</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            Provides priority entry and luxury lounge access for a stress-free travel experience.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Club%20Mobay"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luminous Lagoon Night Tour -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="special">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Luminous-Lagoon.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Luminous Lagoon">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Unique, Viral Photos
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Falmouth
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Luminous Lagoon</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A rare opportunity to see a bioluminescent bay glow at night.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Luminous%20Lagoon"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Joy Spence Appleton Estate Rum Experience -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="special">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Appleton-Estate-Rum.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Appleton Estate">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Educational, Luxury
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            South Coast
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Appleton Estate Rum</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A journey through the process of crafting rum from "cane to cup".
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Appleton%20Estate"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Grotto Caves -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="special">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/Green-Grotto-Caves.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="Green Grotto Caves">
+                        <div
+                            class="absolute top-5 left-5 bg-green-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            History, Unique
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Discovery Bay
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">Green Grotto Caves</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            An exploration of an underground world featuring ancient limestone chambers and
+                            shimmering caverns.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20Green%20Grotto"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Negril One Love Bus Bar Crawl -->
+                <div class="tour-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full group"
+                    data-category="special">
+                    <div class="h-64 overflow-hidden relative">
+                        <img loading="lazy"
+                            src="https://jamventure.tours/wp-content/uploads/2026/01/One-Love-Bus-Bar-Crawl.png"
+                            class="card-img w-full h-full object-cover transition-transform duration-700 ease-in-out"
+                            alt="One Love Bus">
+                        <div
+                            class="absolute top-5 left-5 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                            Party Vibes, Authentic
+                        </div>
+                        <div
+                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm">
+                            Negril
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-tight">One Love Bus Bar Crawl</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2">
+                            A social tour visiting local pubs along the beach and cliffs.
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Price Inquire</p>
+                                <p class="text-2xl font-bold text-yellow-600">$$</p>
+                            </div>
+                            <a href="https://wa.me/1234567890?text=Booking%20One%20Love%20Bus"
+                                class="jv-book-btn px-6 py-3 font-bold text-xs gap-2 shadow-md">
+                                <span>Book Now</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO / FEATURES SECTION -->
+    <section class="py-20 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <!-- Section Header Component Use -->
+                <span
+                    class="inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 bg-green-100 text-green-700 border border-green-200">
+                    Why Choose Us
+                </span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">The JamVenture Standard</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature Card Component Use -->
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-white rounded-xl border border-slate-200 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform text-2xl">
+                            🚢
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cruise Port Guarantee</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Tailored specifically for ship passengers. We guarantee your timely return to port, or we
+                            pay for your transport to the next stop.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-white rounded-xl border border-slate-200 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform text-2xl">
+                            🏝️
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Private & Exclusive</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            No strangers in your van. No waiting for other passengers. Just you, your family, and your
+                            personal island guide.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group relative h-full">
+                    <div
+                        class="p-8 h-full bg-white rounded-xl border border-slate-200 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform text-2xl">
+                            ✨
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Custom Itineraries</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Don't stick to the script. Stop for photos, grab a cold Red Stripe, or stay longer at the
+                            beach. It's your day.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO & BRAND STORY -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-20 h-20 bg-green-500 rounded-full opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1544735745-b4442978252d?auto=format&fit=crop&q=80&w=800"
+                            class="relative rounded-2xl shadow-2xl z-10" alt="Jamaica Landscape" />
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-900 rounded-full opacity-10"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Book Private Tours in Jamaica?</h2>
+                    <div class="space-y-4 text-slate-600 leading-relaxed font-light">
+                        <p>
+                            Choosing <strong class="text-green-700 font-semibold">JamVenture</strong> means choosing
+                            freedom. While resort buses operate on rigid timetables, our private service revolves around
+                            you.
+                        </p>
+                        <p>
+                            We are not just drivers; we are JTB-certified ambassadors. We know the history of the Great
+                            Houses, the spice of the best jerk huts, and the quietest spots on Seven Mile Beach. Secure
+                            your <strong class="text-green-700 font-semibold">private transportation in Jamaica</strong>
+                            today and see the island through the eyes of a local.
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <!-- Primary Button (Green) Component -->
+                        <a href="https://wa.me/1234567890"
+                            class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg gap-2">
+                            <span>Start Planning Your Trip</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- JAVASCRIPT FOR FILTERING (Optimized) -->
+<script>
+    function filterTours(category, btnElement) {
+        // 1. Manage Button Styles
+        const buttons = document.querySelectorAll('#jv-tours-wrapper .filter-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('tab-active');
+            // Reset to default style
+            btn.classList.add('tab-inactive');
+        });
+
+        // Add 'tab-active' class to clicked button
+        btnElement.classList.add('tab-active');
+        btnElement.classList.remove('tab-inactive');
+
+        // 2. Filter the Grid
+        const cards = document.querySelectorAll('#jv-tours-wrapper .tour-card');
+        const noResults = document.getElementById('no-results');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            // Reset animation
+            card.classList.remove('animate-fade');
+            void card.offsetWidth; // trigger reflow
+
+            const match = category === 'all' || card.getAttribute('data-category') === category;
+
+            if (match) {
+                card.style.display = 'flex';
+                card.classList.add('animate-fade');
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // 3. Show/Hide "No Results" message
+        if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+            document.getElementById('tours-grid').parentElement.classList.add('hidden');
+        } else {
+            noResults.classList.add('hidden');
+            document.getElementById('tours-grid').parentElement.classList.remove('hidden');
+        }
+    }
+</script>

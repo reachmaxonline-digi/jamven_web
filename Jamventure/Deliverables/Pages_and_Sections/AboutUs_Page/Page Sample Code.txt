@@ -1,0 +1,499 @@
+<?php
+/**
+ * Template Name: About Us - JamVenture
+ * Description: Custom About Us page for JamVenture
+ */
+
+get_header(); ?>
+
+<!-- Google Fonts - Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    /* Reset for this page */
+    .about-jamventure {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .about-jamventure * {
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Hero Section */
+    .jv-hero {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        text-align: center;
+        padding: 80px 20px 100px;
+        position: relative;
+    }
+
+    .jv-hero h1 {
+        font-size: 3.8em;
+        font-weight: 800;
+        margin-bottom: 30px;
+        line-height: 1.2;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+    }
+
+    .jv-hero h1 br {
+        display: block;
+    }
+
+    .jv-hero .hero-subtitle {
+        font-size: 1.6em;
+        color: #00B050;
+        margin-bottom: 35px;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .jv-hero p {
+        font-size: 1.2em;
+        color: #ffffff;
+        opacity: 0.95;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-weight: 300;
+    }
+    
+    .jv-hero p strong {
+        font-weight: 700;
+    }
+
+    /* Mission Section */
+    .jv-mission-section {
+        background: #f5f3f0;
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .jv-section-label {
+        display: inline-block;
+        background: #e6f7ed;
+        color: #00B050;
+        padding: 8px 24px;
+        border-radius: 20px;
+        font-size: 0.95em;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .jv-mission-section h2 {
+        font-size: 2.8em;
+        color: #1a1a1a;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+
+    .jv-mission-section p {
+        font-size: 1.15em;
+        color: #4a4a4a;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    /* Values Section */
+    .jv-values-section {
+        background: #f5f3f0;
+        padding: 80px 20px 100px;
+        text-align: center;
+    }
+
+    .jv-values-section h2 {
+        font-size: 2.8em;
+        color: #1a1a1a;
+        margin-bottom: 60px;
+        font-weight: 700;
+    }
+
+    .jv-values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .jv-value-card {
+        background: white;
+        padding: 50px 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .jv-value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .jv-value-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 25px;
+        background: #e6f7ed;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .jv-value-icon svg {
+        width: 30px;
+        height: 30px;
+        stroke: #00B050;
+        fill: none;
+        stroke-width: 2;
+    }
+
+    .jv-value-card h3 {
+        font-size: 1.5em;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .jv-value-card p {
+        font-size: 1em;
+        color: #4a4a4a;
+        line-height: 1.6;
+    }
+
+    /* Certifications Section */
+    .jv-certifications-section {
+        background: #f5f3f0;
+        padding: 80px 20px 100px;
+    }
+
+    .jv-cert-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .jv-cert-left h2 {
+        font-size: 2.5em;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .jv-cert-left p {
+        font-size: 1.1em;
+        color: #4a4a4a;
+        line-height: 1.8;
+    }
+
+    .jv-cert-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .jv-cert-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 1.05em;
+        color: #2c3e50;
+    }
+
+    .jv-cert-item svg {
+        width: 24px;
+        height: 24px;
+        stroke: #00B050;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+
+    /* Team Section */
+    .jv-team-section {
+        background: #e8e5e1;
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .jv-team-section h2 {
+        font-size: 2.8em;
+        color: #1a1a1a;
+        margin-bottom: 60px;
+        font-weight: 700;
+    }
+
+    .jv-team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .jv-team-member {
+        text-align: center;
+    }
+
+    .jv-team-avatar {
+        width: 140px;
+        height: 140px;
+        background: linear-gradient(135deg, #00B050 0%, #009944 100%);
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+
+    .jv-team-member h3 {
+        font-size: 1.3em;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    .jv-team-member p {
+        font-size: 1em;
+        color: #4a4a4a;
+    }
+
+    /* CTA Section */
+    .jv-cta-section {
+        background: #e8e5e1;
+        padding: 80px 20px 100px;
+        text-align: center;
+    }
+
+    .jv-cta-section h2 {
+        font-size: 2.5em;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .jv-cta-section p {
+        font-size: 1.15em;
+        color: #4a4a4a;
+        margin-bottom: 40px;
+    }
+
+    .jv-cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #00B050 0%, #009944 100%);
+        color: white;
+        padding: 18px 50px;
+        border-radius: 50px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .jv-cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 176, 80, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .jv-hero {
+            padding: 60px 20px 80px;
+        }
+        
+        .jv-hero h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        
+        .jv-hero h1 br {
+            display: inline;
+        }
+        
+        .jv-hero .hero-subtitle {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+        
+        .jv-hero p {
+            font-size: 1em;
+        }
+
+        .jv-mission-section h2,
+        .jv-values-section h2,
+        .jv-team-section h2 {
+            font-size: 2em;
+        }
+
+        .jv-cert-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .jv-values-grid,
+        .jv-team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="about-jamventure">
+    <!-- Hero Section -->
+    <section class="jv-hero">
+        <h1>About Jamventur: Your<br>Trusted Island Partner</h1>
+        <div class="hero-subtitle">More Than Just a Ride—A True Jamaican Experience.</div>
+        <p>At Jamventur, we believe that your vacation shouldn't start when you reach the hotel, it begins the moment we welcome you. As the leading provider of <strong>Private Transportation and Tours Jamaica</strong>, we bridge the gap between simple transit and genuine hospitality.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="jv-mission-section">
+        <span class="jv-section-label">Our Mission</span>
+        <h2>Sharing Jamaica, One Journey at a Time</h2>
+        <p>At JamVenture, we believe that the best way to experience Jamaica is through the eyes of those who call it home. Our mission is to provide safe, comfortable, and authentic private transportation tours that go beyond typical tourist experiences. We connect visitors with the real Jamaica—its people, culture, natural wonders, and hidden treasures that only locals truly know.</p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="jv-values-section">
+        <span class="jv-section-label">Our Values</span>
+        <h2>What We Stand For</h2>
+        <div class="jv-values-grid">
+            <div class="jv-value-card">
+                <div class="jv-value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>Safety First</h3>
+                <p>Your safety is our top priority. All vehicles are fully insured and regularly maintained.</p>
+            </div>
+
+            <div class="jv-value-card">
+                <div class="jv-value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h3>Genuine Hospitality</h3>
+                <p>Experience authentic Jamaican warmth from guides who truly love sharing their island.</p>
+            </div>
+
+            <div class="jv-value-card">
+                <div class="jv-value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3>Integrity</h3>
+                <p>Transparent pricing, honest recommendations, and no hidden fees or surprises.</p>
+            </div>
+
+            <div class="jv-value-card">
+                <div class="jv-value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h3>Reliability</h3>
+                <p>100% on-time track record for airport pickups and cruise ship returns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="jv-certifications-section">
+        <span class="jv-section-label" style="display: block; text-align: center; margin-bottom: 40px;">Certifications</span>
+        <div class="jv-cert-container">
+            <div class="jv-cert-left">
+                <h2>Fully Licensed & Certified</h2>
+                <p>Your safety and peace of mind are paramount. JamVenture operates with full government licensing and industry certifications to ensure you receive the highest standard of service.</p>
+            </div>
+            <div class="jv-cert-right">
+                <ul class="jv-cert-list">
+                    <li class="jv-cert-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Jamaica Tourist Board (JTB) Licensed
+                    </li>
+                    <li class="jv-cert-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Tourism Product Development Company (TPDCo) Certified
+                    </li>
+                    <li class="jv-cert-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Red Plate Commercial Vehicle Registration
+                    </li>
+                    <li class="jv-cert-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Comprehensive Liability Insurance
+                    </li>
+                    <li class="jv-cert-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        COVID-19 Safety Protocols Trained
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="jv-team-section">
+        <span class="jv-section-label">Meet the Team</span>
+        <h2>The Faces Behind JamVenture</h2>
+        <div class="jv-team-grid">
+            <div class="jv-team-member">
+                <div class="jv-team-avatar">MJ</div>
+                <h3>Marcus Johnson</h3>
+                <p>Founder & Lead Guide</p>
+            </div>
+            <div class="jv-team-member">
+                <div class="jv-team-avatar">KB</div>
+                <h3>Keisha Brown</h3>
+                <p>Operations Manager</p>
+            </div>
+            <div class="jv-team-member">
+                <div class="jv-team-avatar">DW</div>
+                <h3>Devon Williams</h3>
+                <p>Senior Driver</p>
+            </div>
+            <div class="jv-team-member">
+                <div class="jv-team-avatar">ST</div>
+                <h3>Shelly-Ann Thomas</h3>
+                <p>Customer Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="jv-cta-section">
+        <h2>Ready to Experience Jamaica with Us?</h2>
+        <p>Let us show you why JamVenture is Jamaica's trusted private transportation partner</p>
+        <a href="<?php echo home_url('/contact'); ?>" class="jv-cta-button">Start Planning Your Trip</a>
+    </section>
+</div>
+
+<?php get_footer(); ?>

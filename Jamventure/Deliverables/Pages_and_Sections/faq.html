@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ – JamVenture | Jamaica Taxi, Tours & Travel Services</title>
+    <meta name="description"
+        content="Find answers to common questions about JamVenture's Jamaica taxi services, airport transfers, tours, pricing, and bookings. We've got you covered.">
+
+    <!-- TAILWIND & FONTS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-navy": "#0f172a",
+                        "primary-green": "#16a34a",
+                        "accent-turquoise": "#16a34a", // Mapping turquoise to brand green
+                        "accent-yellow": "#facc15",
+                        "soft-white": "#f8fafc",
+                        "jam-coral": "#ff7f50",
+                        "light-slate": "#f8fafc",
+                        "dark-slate": "#0f172a",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- CUSTOM STYLES -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item:hover .faq-question h3 {
+            color: #facc15;
+            /* accent-yellow */
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #16a34a;
+            /* primary-green */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .category-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-nav {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .sticky-nav {
+            top: 0;
+            z-index: 40;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+
+    <!-- FAQ SCHEMA (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is JamVenture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JamVenture is a private transportation, taxi, tour, and excursion service provider operating across Jamaica. We specialize in reliable, personalized travel experiences that combine deep local knowledge with professional service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book a tour or taxi service with JamVenture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can book directly on our website at jamventure.tours, chat with our AI assistant Mia, message us on WhatsApp, call our phone number, or email our support team. Our team will confirm your booking within 30 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which airports do you service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide private airport transfers from Sangster International Airport (MBJ) in Montego Bay and Norman Manley International Airport (KIN) in Kingston."
+          }
+        },
+        {
+            "@type": "Question",
+            "name": "Are your tours private or shared?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All JamVenture services are 100% private. You will never share a vehicle or tour with strangers. Your experience is exclusively yours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What makes JamVenture different from other tour companies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "JamVenture offers 100% private rides and tours, meaning you never share your experience with strangers. We are a local team with deep knowledge of the island, flexible and customizable itineraries, professionally certified drivers, and a commitment to making every guest feel like a VIP."
+            }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer Early Bird discounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Many of our tours offer significant Early Bird savings. Book 14 days in advance to save 25%, up to 105 days in advance for 50% savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Back-to-Ship Guarantee for cruise excursions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a guest misses their ship due to a JamVenture service delay, we will arrange and cover transportation to the next port at no cost to the guest."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-soft-white text-primary-navy antialiased">
+
+    <!-- PAGE HEADER -->
+    <header class="relative bg-dark-slate py-20 overflow-hidden">
+        <!-- Background Overlay for modern touch -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-slate/90 via-dark-slate/80 to-dark-slate/90"></div>
+        </div>
+
+        <!-- Decorative Tropical Element -->
+        <div class="absolute right-0 top-0 opacity-10 pointer-events-none translate-x-1/4 -translate-y-1/4">
+            <svg width="600" height="600" viewBox="0 0 24 24" fill="white">
+                <path d="M12,2C12,2 14.5,7 19,9C14.5,11 12,16 12,16C12,16 9.5,11 5,9C9.5,7 12,2 12,2Z" />
+            </svg>
+        </div>
+        <div class="absolute left-0 bottom-0 opacity-5 pointer-events-none -translate-x-1/4 translate-y-1/4">
+            <svg width="800" height="800" viewBox="0 0 24 24" fill="white">
+                <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 animate-fade-in-up">
+                Frequently Asked <span class="text-primary-green">Questions</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-medium max-w-2xl mx-auto animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                Everything you need to know about booking with JamVenture
+            </p>
+        </div>
+    </header>
+
+    <!-- SEARCH BAR SECTION -->
+    <section class="py-8 bg-white/95 border-b border-slate-100 sticky-nav sticky backdrop-blur-md">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" id="faqSearch" placeholder="Search for a question..."
+                    class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-primary-green focus:ring-4 focus:ring-primary-green/10 focus:outline-none transition-all text-lg shadow-sm">
+            </div>
+
+            <!-- CATEGORY NAVIGATION -->
+            <div class="mt-8 flex justify-start md:justify-center overflow-x-auto category-nav gap-2 md:gap-4 pb-2">
+                <a href="#general"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">General</a>
+                <a href="#bookings"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Bookings</a>
+                <a href="#transfers"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Airport
+                    Transfers</a>
+                <a href="#tours"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Tours</a>
+                <a href="#custom"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Custom
+                    Services</a>
+                <a href="#cruise"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Cruise
+                    Excursions</a>
+                <a href="#vehicles"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Vehicles</a>
+                <a href="#pricing"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Pricing</a>
+                <a href="#safety"
+                    class="whitespace-nowrap px-6 py-2 rounded-full bg-slate-100 text-slate-600 font-bold text-sm hover:bg-primary-green hover:text-white transition-colors">Safety</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ CONTENT SECTION -->
+    <main class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+
+            <!-- GENERAL QUESTIONS -->
+            <div class="faq-category mb-16" id="general">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center">
+                        <span class="material-symbols-outlined">info</span>
+                    </span>
+                    General Questions
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What is JamVenture?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">JamVenture is a private
+                                transportation, taxi, tour, and excursion service provider operating across Jamaica. We
+                                specialize in reliable, personalized travel experiences that combine deep local
+                                knowledge with professional service.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Is JamVenture a taxi service or a tour company?
+                            </h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">JamVenture is both. Guests can book
+                                private taxi services, airport transfers, guided tours and excursions, cruise
+                                excursions, and fully customized travel experiences. You can book only what you need — a
+                                simple ride or a full-day adventure.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Are JamVenture services private?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. All JamVenture services are 100%
+                                private. You will never share a vehicle or tour with strangers. Your experience is
+                                exclusively yours.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What makes JamVenture different from other tour
+                                companies?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">JamVenture offers 100% private rides
+                                and tours, meaning you never share your experience with strangers. We are a local team
+                                with deep knowledge of the island, flexible and customizable itineraries, professionally
+                                certified drivers, and a commitment to making every guest feel like a VIP. We love
+                                Jamaica and we want you to love it too.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKINGS & RESERVATIONS -->
+            <div class="faq-category mb-16" id="bookings">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                    </span>
+                    Bookings & Reservations
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How do I book a tour or taxi service with
+                                JamVenture?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">You can book directly on our website
+                                at jamventure.tours, chat with our AI assistant Mia, message us on WhatsApp, call our
+                                phone number, or email our support team. Our team will confirm your booking within 30
+                                minutes.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I book a taxi without booking a tour?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. JamVenture offers standalone
+                                private taxi services for short trips, shopping runs, dining, nightlife, and
+                                point-to-point transportation across the island.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How far in advance should I book?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">We recommend booking as early as
+                                possible. For airport transfers, book as early as you can. For tours, 24–48 hours in
+                                advance is recommended. Same-day taxi requests are subject to availability. Booking
+                                early also unlocks Early Bird savings of up to 50% off on many tours.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I book same-day or last-minute?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes! We do our best to accommodate
+                                last-minute bookings subject to availability. Contact us directly on WhatsApp at
+                                +1-876-449-3766 for the fastest response.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I book for a group?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes! We cater to groups of all sizes.
+                                We have sedans, vans, and coaster buses available depending on your group size. Just let
+                                us know how many people and we will recommend the right vehicle and best rate.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I customize my tour?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Absolutely. JamVenture specializes in
+                                custom tours. You can mix attractions, adjust timing, and build an experience around
+                                your interests and schedule.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Will I receive a confirmation after booking?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. Once your booking is confirmed,
+                                you will receive a confirmation via email and WhatsApp with all your trip details,
+                                driver information, and pickup time.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I make changes to my booking after it is
+                                confirmed?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Absolutely. Contact our team as soon
+                                as possible via WhatsApp at +1-876-449-3766 or email hello@jamventure.tours and we will
+                                do our best to accommodate any changes.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I cancel my booking?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. JamVenture offers free
+                                cancellation, subject to timing and service type. Contact our team as early as possible
+                                if you need to cancel.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I reschedule a booking?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. Rescheduling is allowed based on
+                                availability. Reach out to our team via WhatsApp or email and we will sort it out for
+                                you.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do I need to pay a deposit to confirm my booking?
+                            </h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Our team will provide full payment
+                                details when they confirm your booking. Payment policies vary depending on the service
+                                type and tour selected.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIRPORT TRANSFERS -->
+            <div class="faq-category mb-16" id="transfers">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-accent-turquoise/10 text-accent-turquoise flex items-center justify-center">
+                        <span class="material-symbols-outlined">flight_land</span>
+                    </span>
+                    Airport Transfers
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Which airports do you service?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">We provide private airport transfers
+                                from Sangster International Airport (MBJ) in Montego Bay and Norman Manley International
+                                Airport (KIN) in Kingston.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How will I find my driver at the airport?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Airport transfers include a
+                                meet-and-greet service. Your driver will be waiting in the arrivals hall with a sign
+                                displaying your name. You will also receive your driver's contact details before your
+                                arrival.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What if my flight is delayed?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">No need to worry. We track your flight
+                                in real time. If your flight is delayed, your driver will adjust pickup time accordingly
+                                at no extra charge.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do I need to provide my flight number when booking
+                                an airport transfer?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. Your flight number allows us to
+                                monitor your arrival and ensure your driver is there right on time.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How long does the drive take from the airport to
+                                popular destinations?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">
+                                Here are approximate drive times from Montego Bay Airport:<br><br>
+                                • Montego Bay hotels: 10–20 minutes<br>
+                                • Falmouth resorts: 35–45 minutes<br>
+                                • Ocho Rios: 1.5–2 hours<br>
+                                • Negril: 1.5–2 hours<br>
+                                • Kingston: 3.5–4 hours<br><br>
+                                All times are approximate and may vary with traffic conditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOURS & EXPERIENCES -->
+            <div class="faq-category mb-16" id="tours">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center">
+                        <span class="material-symbols-outlined">explore</span>
+                    </span>
+                    Tours & Experiences
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What tours do you offer?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">We offer a wide range of tours
+                                including Blue Hole & Dunn's River Falls, the Triple Action Pack, YS Falls, Martha Brae
+                                River Rafting, Dolphin Cove, the Luminous Lagoon Night Tour, Appleton Estate Rum
+                                Experience, Bob Marley Museum, Rose Hall Great House, ATV Jungle Safari, Rastafari
+                                Cultural ATV Experience, Catamaran Cruise to Rick's Cafe, Negril One Love Bus Bar Crawl,
+                                and many more. Visit our Tours & Packages page for the full list.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What is the Triple Action Pack?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">The Triple Action Pack is one of our
+                                most popular adventure tours based in Ocho Rios. It combines three thrilling activities
+                                in one day — swimming at the Blue Hole, horseback riding, and river tubing. It is
+                                perfect for groups, couples, and adventure lovers.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Are your tours private or shared?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">All JamVenture tours are 100% private.
+                                You will never share a vehicle or tour experience with strangers.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How long do tours usually last?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Most tours range from half-day (4–5
+                                hours) to full-day (8–10 hours), depending on the itinerary and guest preference.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I book a multi-day tour across the island?
+                            </h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes! We offer custom multi-day island
+                                tours covering multiple parishes and attractions. Our tour coordinator will work with
+                                you to plan the full itinerary, including accommodations if needed.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can we stop for food or photos during a tour?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. JamVenture tours are flexible.
+                                Guests may stop for meals, local food spots, photos, or additional sightseeing when time
+                                allows.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do your tour prices include admission fees?</h3>
+                            </h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">
+                                Yes! We offer custom multi-day island tours covering multiple parishes and attractions.
+                                Our tour coordinator will work with you to plan the full itinerary including
+                                accommodations if needed.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Q20 -->
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do you offer Early Bird discounts?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">
+                                Yes! Many of our tours offer significant Early Bird savings. Book 14 days in advance and
+                                save 25%. Book 105 days in advance and save up to 50%. The earlier you book, the more
+                                you save.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CUSTOM SERVICES -->
+            <div class="faq-category mb-16" id="custom">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center">
+                        <span class="material-symbols-outlined">auto_fix_high</span>
+                    </span>
+                    Custom Services
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do you offer 4-hour or 8-hour private vehicle
+                                hire?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. We offer both 4-hour and 8-hour
+                                private vehicle and driver hire. This is perfect for guests who want full flexibility to
+                                go wherever they want without a fixed itinerary.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can I hire a driver for a full week?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. JamVenture offers weekly private
+                                van hire with a dedicated driver. This provides the ultimate convenience and flexibility
+                                for your entire stay in Jamaica. Contact our team for weekly rates.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Can you help plan a special event (birthday,
+                                honeymoon, wedding)?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Absolutely! We love helping guests
+                                celebrate. We can arrange VIP transport, personalized tours, and special surprises for
+                                any occasion. Just let us know what you have in mind.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do you provide transportation for business groups
+                                or corporate events?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. We provide professional
+                                transportation for corporate groups, retreats, and business travelers across Jamaica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRUISE SHIP EXCURSIONS -->
+            <div class="faq-category mb-16" id="cruise">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-accent-blue/10 text-accent-blue flex items-center justify-center">
+                        <span class="material-symbols-outlined">directions_boat</span>
+                    </span>
+                    Cruise Ship Excursions
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do you offer excursions for cruise ship
+                                passengers?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. JamVenture offers specialized
+                                private excursions for cruise passengers arriving at Falmouth, Montego Bay, and Ocho
+                                Rios cruise ports. We ensure you see the best of Jamaica and return to your ship on
+                                time.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Is JamVenture's Back-To-Ship Guarantee reliable?
+                            </h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. Our excursions are meticulously
+                                timed to ensure you return to the port with plenty of time before your ship departs. We
+                                track ship schedules and traffic conditions to guarantee your peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VEHICLES & DRIVERS -->
+            <div class="faq-category mb-16" id="vehicles">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center">
+                        <span class="material-symbols-outlined">directions_car</span>
+                    </span>
+                    Vehicles & Drivers
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What types of vehicles do you have?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Our fleet includes private sedans (1–3
+                                passengers), SUVs, small vans (4–6 passengers), large vans (7–12 passengers), and
+                                coaster buses (13–22 passengers). All vehicles are air-conditioned, modern, and
+                                well-maintained.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Are your drivers licensed and professional?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. All JamVenture drivers are
+                                professionally licensed, experienced, and knowledgeable about Jamaica's roads and
+                                attractions. Many are also certified by the Jamaica Tourist Board (JTB).</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Do you offer child safety seats?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Yes. Child safety seats (car seats and
+                                boosters) are available upon request. Please let us know when booking so we can have
+                                them ready in your vehicle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRICING & PAYMENTS -->
+            <div class="faq-category mb-16" id="pricing">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center">
+                        <span class="material-symbols-outlined">payments</span>
+                    </span>
+                    Pricing & Payments
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Are there any hidden fees?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">No. We pride ourselves on transparent
+                                pricing. Any applicable charges such as wait time, tolls, or additional stops will be
+                                communicated clearly before you confirm your booking.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Is tipping expected?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Tipping is not required but is always
+                                appreciated by our drivers and guides as a token of appreciation for great service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAFETY & PRACTICAL -->
+            <div class="faq-category mb-16" id="safety">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span
+                        class="w-10 h-10 rounded-xl bg-accent-turquoise/10 text-accent-turquoise flex items-center justify-center">
+                        <span class="material-symbols-outlined">verified_user</span>
+                    </span>
+                    Safety & Practical Information
+                </h2>
+                <div class="space-y-4">
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">Is Jamaica safe for tourists?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">Jamaica is a welcoming and beautiful
+                                destination that millions of tourists enjoy every year. As with any travel destination,
+                                we recommend staying aware of your surroundings. Traveling with a reputable, private
+                                service like JamVenture ensures you have a local expert with you at all times.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">What should I bring on a tour?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">We recommend bringing sunscreen,
+                                insect repellent, comfortable clothing, swimwear (for waterfall and beach tours), water,
+                                and a camera. Your driver or tour guide may have additional suggestions based on your
+                                specific tour pack.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="faq-item border border-slate-200 rounded-2xl bg-white overflow-hidden transition-all duration-300">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left group"
+                            aria-expanded="false">
+                            <h3 class="font-bold text-slate-900 pr-8">How do I contact JamVenture?</h3>
+                            <span
+                                class="faq-icon text-primary-green font-light text-3xl transition-transform duration-300">+</span>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="text-slate-600 leading-relaxed font-medium">You can reach us anytime on WhatsApp
+                                at +1-876-449-3766, call our US line at +1-262-254-7059, email hello@jamventure.tours,
+                                or chat with Mia on our website. We are available 24/7 to assist you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CALL TO ACTION (CTA) SECTION -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary-navy mb-4">Still have questions?</h2>
+            <p class="text-lg text-slate-600 mb-12">Our team is ready to help. Reach out anytime.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Chat with Mia -->
+                <a href="https://agent.jotform.com/019c3064b8bc72b89bf0a603d8409bf2a573/voice"
+                    class="flex flex-col items-center p-8 bg-white rounded-2xl border border-slate-200 hover:border-primary-green transition-all hover:shadow-xl group">
+                    <div
+                        class="w-14 h-14 rounded-full bg-primary-green/10 text-primary-green flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">chat</span>
+                    </div>
+                    <span class="font-bold text-slate-900 mb-1">Chat with Mia</span>
+                    <span class="text-sm text-slate-500">AI Assistant</span>
+                </a>
+
+                <!-- WhatsApp Us -->
+                <a href="https://wa.me/18764493766"
+                    class="flex flex-col items-center p-8 bg-white rounded-2xl border border-slate-200 hover:border-green-500 transition-all hover:shadow-xl group">
+                    <div
+                        class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">phone_iphone</span>
+                    </div>
+                    <span class="font-bold text-slate-900 mb-1">WhatsApp Us</span>
+                    <span class="text-sm text-slate-500">+1-876-449-3766</span>
+                </a>
+
+                <!-- Email Us -->
+                <a href="mailto:hello@jamventure.tours"
+                    class="flex flex-col items-center p-8 bg-white rounded-2xl border border-slate-200 hover:border-jam-coral transition-all hover:shadow-xl group">
+                    <div
+                        class="w-14 h-14 rounded-full bg-jam-coral/10 text-jam-coral flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">mail</span>
+                    </div>
+                    <span class="font-bold text-slate-900 mb-1">Email Us</span>
+                    <span class="text-sm text-slate-500">hello@jamventure.tours</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script>
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Search Filtering Logic
+        const searchInput = document.getElementById('faqSearch');
+        const faqCategories = document.querySelectorAll('.faq-category');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+
+            faqItems.forEach(item => {
+                const questionText = item.querySelector('h3').textContent.toLowerCase();
+                const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (questionText.includes(term) || answerText.includes(term)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Hide/Show categories based on if they have visible items
+            faqCategories.forEach(category => {
+                const visibleItems = category.querySelectorAll('.faq-item:not(.hidden)');
+                if (visibleItems.length === 0) {
+                    category.classList.add('hidden');
+                } else {
+                    category.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Anchor Link Smoothing (URL Hash Update)
+        document.querySelectorAll('.category-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 120, // Offset for sticky nav
+                    behavior: 'smooth'
+                });
+
+                history.pushState(null, null, targetId);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+# JamVenture Website Blueprint
+
+**Master Design System & Component Library**
+Use this blueprint to build standard internal pages (About, Tours, Contact) ensuring consistency with the Homepage.
+
+## 1. Global Dependencies (Head & CSS)
+
+Add this to the `<head>` of every page or your Elementor Header.
+
+```html
+<!-- TAILWIND & FONTS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- CUSTOM STYLES -->
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: #0f172a; /* Slate-900 */
+        background-color: #f8fafc; /* Slate-50 */
+    }
+    
+    /* Dynamic Navigation */
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Animations */
+    @keyframes pulse-green {
+        0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); } /* Green-600 */
+        70% { box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+    }
+    .animate-pulse-green { animation: pulse-green 2s infinite; }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+    
+    /* Utilities */
+    .hidden-modal { display: none !important; }
+</style>
+```
+
+---
+
+## 2. Design Tokens
+
+### Color Palette
+| Name | Tailwind Class | Hex | Usage |
+| :--- | :--- | :--- | :--- |
+| **Primary Green** | `bg-green-600` | `#16a34a` | Main Buttons, Icons, Logos |
+| **Hover Green** | `bg-green-700` | `#15803d` | Button Hover States |
+| **Accent Yellow** | `text-yellow-400` | `#facc15` | Stars, Icons on Dark |
+| **Accent Gold** | `text-yellow-600` | `#ca8a04` | Prices, Subheadings on Light |
+| **Dark Slate** | `bg-slate-900` | `#0f172a` | Footer, Hero Backgrounds |
+| **Light Slate** | `bg-slate-50` | `#f8fafc` | Section Backgrounds |
+
+### Shapes & Effects
+*   **Buttons & Cards**: `rounded-xl` (Standard Soft Curve)
+*   **Badges/Pills**: `rounded-full` (Capsule shape)
+*   **Hover Lift**: `hover:-translate-y-1 transition-all duration-300`
+*   **Shadows**: `shadow-lg` (Depth), colored glows `shadow-[0_0_20px_rgba(34,197,94,0.4)]`
+
+---
+
+## 3. Component Library (Copy-Paste)
+
+### A. Section Header (Standard)
+```html
+<div class="text-center mb-16">
+    <span class="inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 bg-green-100 text-green-700 border border-green-200">
+        Section Label
+    </span>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+        Main Headline
+    </h2>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Descriptive subtext goes here.
+    </p>
+</div>
+```
+
+### B. Primary Button (Green)
+```html
+<a href="#" class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg gap-2">
+    <span>Button Text</span>
+    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+</a>
+```
+
+### C. Feature/Service Card (Standard)
+```html
+<div class="group relative h-full">
+    <div class="p-8 h-full bg-white rounded-xl border border-slate-200 hover:border-green-500/30 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl">
+        <!-- Icon -->
+        <div class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform">
+            <!-- SVG Here -->
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Feature Title</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6">Feature description text.</p>
+        <a href="#" class="inline-flex items-center text-green-600 font-bold hover:text-green-700 transition-colors text-sm">
+            Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+    </div>
+</div>
+```
+
+### D. Navigation Bar (Fixed Glass)
+```html
+<nav class="fixed w-full z-50 glass-nav" style="top: 0; left: 0;">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="text-2xl font-bold tracking-tighter decoration-0">
+            Jam<span class="text-green-600">Venture</span>
+        </a>
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-8 font-semibold text-sm text-slate-600">
+            <a href="index.html" class="hover:text-green-600 transition">Home</a>
+            <a href="about.html" class="hover:text-green-600 transition">About Us</a>
+            <a href="tours.html" class="hover:text-green-600 transition">Tours</a>
+            <a href="contact.html" class="hover:text-green-600 transition">Contact</a>
+        </div>
+        <!-- CTA -->
+        <a href="https://wa.me/1234567890" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:bg-green-700 transition">Book Now</a>
+    </div>
+</nav>
+```
+
+---
+
+## 4. Page Template (Internal Page)
+
+Use this skeleton for creating new pages like "About Us" or "Terms".
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title | JamVenture</title>
+    <!-- [Insert Global Dependencies Here] -->
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- NAVIGATION -->
+    <!-- [Insert Navigation Component] -->
+
+    <!-- SHORT HERO (Internal Page) -->
+    <section class="relative h-[60vh] flex items-center justify-center bg-slate-900 overflow-hidden pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="[Insert URL]" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900"></div>
+        </div>
+        <div class="relative z-10 text-center">
+            <span class="text-green-400 font-bold tracking-widest uppercase text-sm mb-2 block animate-fade-in-up">Discover</span>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">Page Title</h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-24 container mx-auto px-6">
+        <!-- [Insert Page Content Here] -->
+    </main>
+
+    <!-- FOOTER -->
+    <!-- [Insert Footer Component from Homepage Section 9] -->
+
+    <!-- AI MODAL (Optional) -->
+    <!-- [Insert AI Modal Code] -->
+
+</body>
+</html>
+```

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | JamVenture - Private Tours & Transfers Jamaica</title>
+    <meta name="description"
+        content="Contact JamVenture for private airport transfers, cruise excursions, and custom tours in Jamaica. Get a personalized quote today.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        /* Fixed Navigation Glass Effect */
+        .glass-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animations */
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+            }
+        }
+
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Modal Hidden State */
+        .hidden-modal {
+            display: none !important;
+        }
+
+        /* Ensure content starts below fixed nav */
+        .page-content {
+            padding-top: 80px;
+        }
+
+        /* ========================================
+           WORDPRESS ADMIN BAR COMPATIBILITY
+           When logged into WordPress, the admin bar 
+           adds 32px at the top (46px on mobile)
+        ======================================== */
+        body.admin-bar .glass-nav {
+            top: 32px;
+        }
+
+        body.admin-bar .page-content {
+            padding-top: 112px;
+            /* 80px + 32px for admin bar */
+        }
+
+        @media screen and (max-width: 782px) {
+            body.admin-bar .glass-nav {
+                top: 46px;
+                /* Mobile admin bar is taller */
+            }
+
+            body.admin-bar .page-content {
+                padding-top: 126px;
+                /* 80px + 46px for mobile admin bar */
+            }
+        }
+
+        /* WordPress might hide admin bar on smaller screens */
+        @media screen and (max-width: 600px) {
+            body.admin-bar .glass-nav {
+                top: 0;
+                /* Admin bar is hidden on very small screens */
+            }
+
+            body.admin-bar .page-content {
+                padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <nav class="glass-nav">
+        <div
+            style="max-width: 1280px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html"
+                style="font-size: 1.5rem; font-weight: 700; letter-spacing: -0.05em; text-decoration: none; color: #0f172a;">
+                Jam<span style="color: #16a34a;">Venture</span>
+            </a>
+            <div style="display: none;" class="md:flex" id="nav-links">
+                <div
+                    style="display: flex; gap: 32px; font-weight: 600; font-size: 0.875rem; color: #475569; align-items: center;">
+                    <a href="index.html" style="text-decoration: none; color: #475569; transition: color 0.3s;"
+                        onmouseover="this.style.color='#16a34a'" onmouseout="this.style.color='#475569'">Home</a>
+                    <a href="about.html" style="text-decoration: none; color: #475569; transition: color 0.3s;"
+                        onmouseover="this.style.color='#16a34a'" onmouseout="this.style.color='#475569'">About Us</a>
+                    <a href="tours.html" style="text-decoration: none; color: #475569; transition: color 0.3s;"
+                        onmouseover="this.style.color='#16a34a'" onmouseout="this.style.color='#475569'">Tours</a>
+                    <a href="contact.html" style="text-decoration: none; color: #16a34a; font-weight: 700;">Contact</a>
+                </div>
+            </div>
+            <a href="https://wa.me/1234567890"
+                style="background: #16a34a; color: white; padding: 10px 24px; border-radius: 9999px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3); transition: all 0.3s;"
+                onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         PAGE HERO
+    ======================================== -->
+    <section class="page-content"
+        style="position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; background: #0f172a; overflow: hidden;">
+        <!-- Decorative Blurs -->
+        <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+            <div
+                style="position: absolute; top: 40px; left: 40px; width: 256px; height: 256px; border-radius: 50%; background: rgba(22, 163, 74, 0.2); filter: blur(60px);">
+            </div>
+            <div
+                style="position: absolute; bottom: 40px; right: 40px; width: 320px; height: 320px; border-radius: 50%; background: rgba(234, 179, 8, 0.1); filter: blur(60px);">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="animate-fade-in-up"
+            style="position: relative; z-index: 10; text-align: center; max-width: 1280px; margin: 0 auto; padding: 60px 24px;">
+            <span
+                style="color: #4ade80; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.875rem; margin-bottom: 16px; display: block;">Here
+                to Help 24/7</span>
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: white; margin-bottom: 24px;">Contact
+                JamVenture</h1>
+            <p
+                style="font-size: 1.125rem; color: #94a3b8; max-width: 672px; margin: 0 auto; font-weight: 300; line-height: 1.7;">
+                Let's Plan Your Jamaican Adventure. Simple, stress-free booking for private tours and transfers.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MAIN CONTENT (Two Columns)
+    ======================================== -->
+    <section style="padding: 96px 0; position: relative; overflow: hidden;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 64px; align-items: start;"
+                class="lg:grid-cols-2">
+
+                <!-- LEFT COLUMN: Contact Info & AI -->
+                <div style="display: flex; flex-direction: column; gap: 48px;">
+
+                    <!-- Intro -->
+                    <div>
+                        <h2 style="font-size: 1.875rem; font-weight: 700; color: #0f172a; margin-bottom: 24px;">We're
+                            Ready to Help</h2>
+                        <p style="color: #475569; line-height: 1.8; font-size: 1.125rem; margin-bottom: 32px;">
+                            Whether you need a private airport transfer, a cruise ship excursion, or a fully customized
+                            island tour, the JamVenture team is ready to help. Reach out anytime—we make booking private
+                            transportation tours in Jamaica simple and stress-free.
+                        </p>
+
+                        <!-- Checklist -->
+                        <div
+                            style="background: #f8fafc; padding: 32px; border-radius: 16px; border: 1px solid #e2e8f0;">
+                            <h4 style="font-weight: 700; color: #0f172a; margin-bottom: 16px;">All JamVenture services
+                                are:</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <svg style="width: 24px; height: 24px; color: #16a34a; flex-shrink: 0;" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span style="color: #334155; font-weight: 500;">100% private (no shared
+                                        rides)</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <svg style="width: 24px; height: 24px; color: #16a34a; flex-shrink: 0;" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span style="color: #334155; font-weight: 500;">Operated by JTB-certified, Red Plate
+                                        drivers</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <svg style="width: 24px; height: 24px; color: #16a34a; flex-shrink: 0;" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span style="color: #334155; font-weight: 500;">Fixed-price and fully insured</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; gap: 12px;">
+                                    <svg style="width: 24px; height: 24px; color: #16a34a; flex-shrink: 0;" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span style="color: #334155; font-weight: 500;">Scheduled around your travel
+                                        plans</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- AI Guide Callout -->
+                    <div
+                        style="position: relative; overflow: hidden; border-radius: 16px; background: #0f172a; padding: 32px; text-align: center; color: white; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                        <div
+                            style="position: absolute; top: 0; right: 0; width: 128px; height: 128px; background: #3b82f6; border-radius: 50%; filter: blur(60px); opacity: 0.2; transform: translate(50%, -50%);">
+                        </div>
+                        <div style="position: relative; z-index: 10;">
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Need help planning?
+                            </h3>
+                            <p style="color: #94a3b8; margin-bottom: 24px; font-size: 0.875rem;">Speak to our AI Island
+                                Guide for instant answers and tour suggestions.</p>
+                            <button
+                                onclick="document.getElementById('ai-modal-container').classList.remove('hidden-modal');"
+                                style="display: inline-flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(to right, #2563eb, #9333ea); color: white; font-weight: 700; padding: 16px; border-radius: 12px; border: none; cursor: pointer; gap: 8px; font-size: 1rem; transition: all 0.3s; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);"
+                                onmouseover="this.style.transform='scale(1.02)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                </svg>
+                                Speak to AI Island Guide
+                            </button>
+                            <p style="margin-top: 16px; font-size: 0.75rem; color: #64748b;">(Prefer a human? We're
+                                available below!)</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 24px;">Contact
+                            Us Directly</h3>
+                        <p style="color: #64748b; font-size: 0.875rem; margin-bottom: 24px;">For urgent requests,
+                            same-day bookings, or cruise ship guests docking today.</p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                            <a href="https://wa.me/1234567890"
+                                style="display: flex; align-items: center; gap: 16px; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#16a34a'; this.style.background='#f0fdf4';"
+                                onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='transparent';">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: flex; align-items: center; justify-content: center;">
+                                    <svg style="width: 20px; height: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 700; color: #0f172a; font-size: 0.875rem; margin: 0;">
+                                        WhatsApp</p>
+                                    <p style="font-size: 0.75rem; color: #64748b; margin: 0;">Fastest Response</p>
+                                </div>
+                            </a>
+                            <a href="mailto:info@jamventure.tours"
+                                style="display: flex; align-items: center; gap: 16px; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;"
+                                onmouseover="this.style.borderColor='#16a34a'; this.style.background='#f0fdf4';"
+                                onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='transparent';">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: #f1f5f9; color: #475569; display: flex; align-items: center; justify-content: center;">
+                                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 700; color: #0f172a; font-size: 0.875rem; margin: 0;">Email
+                                        Us</p>
+                                    <p style="font-size: 0.75rem; color: #64748b; margin: 0;">info@jamventure.tours</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Booking Form -->
+                <div
+                    style="position: relative; background: white; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); padding: 32px; border: 1px solid #f1f5f9;">
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 8px;">Request a
+                            Quote</h3>
+                        <p style="color: #64748b; font-size: 0.875rem; margin: 0;">Please complete the form below to
+                            receive a personalized, no-obligation quote and availability via email.</p>
+                    </div>
+
+                    <form style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Personal Info -->
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Full
+                                    Name</label>
+                                <input type="text" placeholder="John Doe"
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Email
+                                    Address</label>
+                                <input type="email" placeholder="john@example.com"
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">WhatsApp
+                                / Phone</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000"
+                                style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                        </div>
+
+                        <!-- Service Details -->
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Service
+                                    Type</label>
+                                <select
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none; cursor: pointer;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                                    <option>Select Service...</option>
+                                    <option>Airport Transfer (MBJ)</option>
+                                    <option>Airport Transfer (KIN)</option>
+                                    <option>Cruise Ship Excursion</option>
+                                    <option>Private Day Tour</option>
+                                    <option>Custom / Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Date
+                                    of Service</label>
+                                <input type="date"
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+
+                        <!-- Locations -->
+                        <div>
+                            <label
+                                style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Pickup
+                                Location</label>
+                            <input type="text" placeholder="e.g. MBJ Airport or Hotel Name"
+                                style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                        </div>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Drop-off
+                                    / Tour</label>
+                                <input type="text" placeholder="Destination"
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Passengers</label>
+                                <input type="number" min="1" placeholder="Total #"
+                                    style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                                    onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                    onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div>
+                            <label
+                                style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; text-transform: uppercase; margin-bottom: 8px;">Special
+                                Requests</label>
+                            <textarea rows="3" placeholder="Child seats, grocery stops, accessibility needs..."
+                                style="width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; font-size: 1rem; transition: all 0.3s; outline: none; resize: vertical; font-family: inherit;"
+                                onfocus="this.style.borderColor='#16a34a'; this.style.boxShadow='0 0 0 3px rgba(22, 163, 74, 0.1)';"
+                                onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                            style="width: 100%; background: #16a34a; color: white; font-weight: 700; padding: 16px; border-radius: 12px; border: none; cursor: pointer; font-size: 1rem; box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3); transition: all 0.3s;"
+                            onmouseover="this.style.background='#15803d'; this.style.transform='scale(1.02)';"
+                            onmouseout="this.style.background='#16a34a'; this.style.transform='scale(1)';">
+                            Submit Booking Request
+                        </button>
+                        <p style="font-size: 0.75rem; text-align: center; color: #94a3b8; margin: 0;">Your details are
+                            secure. We'll reply shortly.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         AI MODAL
+    ======================================== -->
+    <div id="ai-modal-container" class="hidden-modal"
+        style="position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);">
+        <div class="animate-fade-in-up"
+            style="background: white; width: 100%; max-width: 512px; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+            <div
+                style="background: linear-gradient(to right, #16a34a, #0f172a); padding: 32px; color: white; position: relative;">
+                <button onclick="document.getElementById('ai-modal-container').classList.add('hidden-modal');"
+                    style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; opacity: 0.8; transition: opacity 0.3s;"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">✕</button>
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0 0 4px 0;">AI Island Guide</h3>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin: 0;">Powered by Gemini AI</p>
+            </div>
+            <div style="padding: 40px; text-align: center;">
+                <div class="animate-pulse-green"
+                    style="width: 96px; height: 96px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px auto;">
+                    <svg style="width: 40px; height: 40px; color: #16a34a;" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                    </svg>
+                </div>
+                <p
+                    style="font-size: 1.125rem; font-weight: 500; color: #1e293b; font-style: italic; margin-bottom: 24px;">
+                    "Wah Gwan! I'm Irie. How can I help you plan your trip?"</p>
+                <button onclick="document.getElementById('ai-modal-container').classList.add('hidden-modal');"
+                    style="background: #0f172a; color: white; padding: 12px 32px; border-radius: 9999px; font-weight: 700; border: none; cursor: pointer; font-size: 1rem; transition: all 0.3s;"
+                    onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'">Start
+                    Chatting</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Styles -->
+    <style>
+        @media (min-width: 768px) {
+            #nav-links {
+                display: flex !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+    </style>
+
+</body>
+
+</html>
